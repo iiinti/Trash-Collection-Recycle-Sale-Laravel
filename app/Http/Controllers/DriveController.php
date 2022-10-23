@@ -24,7 +24,7 @@ class DriveController extends Controller
      */
     public function create()
     {
-        //
+        return view('drives.create');
     }
 
     /**
