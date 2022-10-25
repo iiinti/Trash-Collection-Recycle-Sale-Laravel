@@ -21,4 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('drives', DriveController::class);
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('drives', DriveController::class);
+});

@@ -4,9 +4,9 @@
         // $('.parallax').parallax();
         // $(".dropdown-trigger").dropdown({ hover: true });
         // $('.modal').modal();
-        // $('select').formSelect();
+        $("select").formSelect();
         // $('.tooltipped').tooltip();
-        // $('.datepicker').datepicker();
+        $(".datepicker").datepicker();
 
         if (
             "ontouchstart" in document.documentElement ||
