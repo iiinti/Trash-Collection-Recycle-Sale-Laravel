@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('drives', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('drive_type');
-            $table->string('drive_number');
-            $table->date('date');
-            $table->string('procurement_receipt')->nullable();
-            $table->text('sources_destination');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drives');
+        Schema::dropIfExists('invoices');
     }
 };

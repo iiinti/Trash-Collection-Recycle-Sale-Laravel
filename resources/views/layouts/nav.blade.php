@@ -40,8 +40,8 @@
     
     
     <!-- leftside bar -->
-      @if(Auth::check())
-    @include('layouts.sidenav')
+    @if(Auth::check())
+      @include('layouts.sidenav')
     @endif
 
   </div>

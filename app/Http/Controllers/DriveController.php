@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Drive;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DriveController extends Controller
 {
@@ -35,7 +36,28 @@ class DriveController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
+        // $this->validate($request,[
+        //     'drive_type'=>'required',
+        //     'date'=>'required',
+        //     'drive_number'=>'required',
+        //     'sources_destination'=>'required',
+        // ]);
+        // dd($request);
+        $data = $request->all();
+        //dd($data['date']);
+        $data['date'] = str_replace(',', '', $data['date']);
+        //$dateArray = explode (" ", $data['date']);
+        $data['date'] = Carbon::parse($data['date']);
+        if ($data['drive_type'] == "pickup") {
+            $data['sources_destination'] = $data['sources'];
+        } elseif ($data['drive_type'] == "sales") {
+            $data['sources_destination'] = $data['destinations'];
+        }
+        //dd($dateCarbon);
+        Drive::create($data);
+        dd("Okay");
+        return redirect()->back()->with('message','Document Has Been Uploaded Successfully');
     }
 
     /**

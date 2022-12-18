@@ -14,23 +14,22 @@
   </li>
   <!-- side menu items -->
   <li>
-    <a href="#"><i class="material-icons teal-text">dashboard</i>Dashboard</a>
+    <a href="{{ url('drives/create') }}"><i class="material-icons teal-text">dashboard</i>New Drive</a>
   </li>
   <li>
     <a href="#"><i class="material-icons teal-text">account_box</i>Profile</a>
   </li>
-    <!--User dropdown list -->
-    @if(auth()->user()->role_id == 1)
-    <li>
+  <!--User dropdown list -->
+  <li>
     <a class="dropdown-trigger" href="#!" data-target="dm1"><i class="material-icons teal-text">group</i>Manage Users<i class="material-icons right">arrow_drop_down</i>
     </a>
     <ul id="dm1" class="dropdown-content">
-      <li><a href="#"><i class="material-icons teal-text">group</i>New Requests</a></li>
+      <li><a href="#"><i class="material-icons teal-text">group</i>New Drive</a></li>
       <li><a href="#"><i class="material-icons teal-text">group</i>User List</a></li>
       <li><a href="#"><i class="material-icons teal-text">group</i>Admin List</a></li>
     </ul>
   </li>
-  @endif
+
    <!--end User dropdown list -->
 
   <!--File dropdown list -->
