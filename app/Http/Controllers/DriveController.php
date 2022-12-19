@@ -56,7 +56,7 @@ class DriveController extends Controller
         }
         //dd($dateCarbon);
         Drive::create($data);
-        dd("Okay");
+        //dd("Okay");
         return redirect()->back()->with('message','Document Has Been Uploaded Successfully');
     }
 
